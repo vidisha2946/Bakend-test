@@ -6,41 +6,12 @@ A RESTful backend API for managing support tickets, built with Node.js, Express.
 
 ## Tech Stack
 
-- **Runtime**: Node.js
 - **Framework**: Express.js
 - **Database**: MySQL (mysql2)
 - **Authentication**: JWT (jsonwebtoken)
 - **Password Hashing**: bcryptjs
 - **Validation**: express-validator
 - **Other**: cors, helmet, morgan, dotenv
-
----
-
-## Project Structure
-
-```
-src/
-├── server.js
-├── app.js
-├── database/
-│   ├── connection.js
-│   └── init.js
-├── middleware/
-│   ├── auth.js
-│   └── validate.js
-├── controllers/
-│   ├── authController.js
-│   ├── userController.js
-│   ├── ticketController.js
-│   └── commentController.js
-├── routes/
-│   ├── auth.js
-│   ├── users.js
-│   ├── tickets.js
-│   └── comments.js
-└── validators/
-    └── index.js
-```
 
 ---
 
@@ -104,24 +75,6 @@ Server runs at: `http://localhost:3000`
 
 ---
 
-## Roles & Permissions
-
-| Action                  | MANAGER | SUPPORT | USER |
-|-------------------------|---------|---------|------|
-| Login                   | ✅      | ✅      | ✅   |
-| Create user             | ✅      | ❌      | ❌   |
-| List users              | ✅      | ❌      | ❌   |
-| Create ticket           | ✅      | ❌      | ✅   |
-| View tickets            | All     | Assigned| Own  |
-| Assign ticket           | ✅      | ✅      | ❌   |
-| Update ticket status    | ✅      | ✅      | ❌   |
-| Delete ticket           | ✅      | ❌      | ❌   |
-| Add comment             | ✅      | ✅      | ✅   |
-| View comments           | ✅      | ✅      | ✅   |
-| Edit comment            | ✅      | Own     | Own  |
-| Delete comment          | ✅      | Own     | Own  |
-
----
 
 ## Ticket Status Lifecycle
 
@@ -207,3 +160,4 @@ OPEN → IN_PROGRESS → RESOLVED → CLOSED
 | `npm start`       | Start in production mode |
 | `npm run db:init` | Initialize database and seed default MANAGER |
 #
+
